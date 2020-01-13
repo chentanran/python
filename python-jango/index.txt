@@ -1,0 +1,147 @@
+option = {
+  title: {
+    show: true,
+    text: "弦图",
+    link: "",
+    marginBottom: 0,
+    target: "",
+    textStyle: {
+      color: "rgb(255, 255, 255)",
+      fontWeight: "bold",
+      fontFamily: "Microsoft YaHei",
+      fontSize: 16
+    },
+    subtext: "",
+    sublink: "",
+    subtarget: "",
+    subtextStyle: {
+      color: "rgb(255, 255, 255)",
+      fontWeight: "",
+      fontFamily: "Microsoft YaHei",
+      fontSize: ""
+    },
+    itemGap: 5,
+    left: "center",
+    top: "top",
+    right: "",
+    bottom: "",
+    backgroundColor: "#ffffff",
+    borderColor: ""
+  },
+  contextmenu: {
+    drillthrough: {
+      show: true
+    }
+  },
+  tooltip: {
+    show: true,
+    customizeTip: "",
+    backgroundColor: "rgba(200,200,200,0.5)",
+    borderColor: "rgba(200,200,200,0.5)",
+    border: "0px solid",
+    borderRadius: 5,
+    textStyle: {
+      color: "rgb(255, 255, 255)",
+      fontFamily: "Microsoft YaHei",
+      fontSize: "12"
+    },
+    textAlign: "left",
+    margin: ""
+  },
+  timeline: {
+    show: true,
+    enable: false,
+    axisType: "category",
+    autoPlay: false,
+    rewind: false,
+    rewindSort: false,
+    orient: "horizontal",
+    bottom: "0%",
+    loop: false,
+    symbol: "circle",
+    playInterval: 1000,
+    left: 10,
+    pLeftPercent: 9,
+    right: "6%",
+    top: 0,
+    pTopPercent: 92,
+    widthPercent: 82,
+    heightPercent: 8,
+    lineStyle: {
+      color: "rgb(255, 255, 255)"
+    },
+    itemStyle: {
+      normal: {
+        color: "rgb(255, 255, 255)"
+      }
+    },
+    label: {
+      normal: {
+        textStyle: {
+          color: "rgb(255, 255, 255)"
+        }
+      }
+    },
+    controlStyle: {
+      normal: {
+        color: "rgb(255, 255, 255)"
+      },
+      showPrevBtn: false,
+      showNextBtn: false
+    }
+  },
+  legend: {
+    show: true,
+    colorMode: "",
+    icon: "rect",
+    item: {
+      marginTop: "",
+      marginLeft: "",
+      marginRight: "",
+      markStyle: "",
+      markWidth: "",
+      markTextWidth: "",
+      markRadius: "",
+      isRoundCorner: "",
+      isMarkAboveMarkText: "",
+      color: "rgb(255, 255, 255)",
+      fontWeight: "",
+      fontFamily: "Microsoft YaHei",
+      fontSize: 12,
+      mouseOverColor: "",
+      mouseOverBgColor: ""
+    },
+    textStyle: {
+      color: "",
+      fontWeight: "",
+      fontFamily: "Microsoft YaHei",
+      fontSize: 12
+    },
+    legendColor: [],
+    left: 50,
+    opacity: 1,
+    position: "left"
+  },
+  series: [
+    {
+      type: "graph",
+      adaption: "true",
+      donutTextType: "1",
+      graduationTextStyle: {
+        color: "",
+        fontFamily: "Microsoft YaHei",
+        fontSize: 14
+      },
+      isSorted: false,
+      showGraduation: false,
+      showGraduationAmount: true,
+      textShowMode: "1",
+      textStyle: {
+        color: "rgb(255, 255, 255)",
+        fontFamily: "Microsoft YaHei",
+        fontSize: 12,
+        "text-anchor": ""
+      }
+    }
+  ]
+}

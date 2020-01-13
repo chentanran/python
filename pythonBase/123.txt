@@ -1,0 +1,4 @@
+我喜欢python
+
+建立创建应用程序所需的基础设施
+python manage.py startapp learning_logs
