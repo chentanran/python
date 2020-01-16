@@ -1,0 +1,21 @@
+<!--# 模板中声明引入静态文件的标签 只有使用它，语句②（<a>标签）中才能使用 %static 'images/logo.png' %，而不是用“硬编码”的方式写图片地址-->
+{% load static %}
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href=" ">
+<!--                    % static %可以用来引入某个静态文-->
+<!--                  < img src="{% static '/images/logo.png' %}" width="100px">-->
+                </a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav" role="navigation">
+<!--                     url:Django模板内置的标记符，表示在此处返回由应用和参数组成的URL-->
+                    <li><a href="{% url 'blog:blog_title' %}">BLOG</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">LOGIN</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>

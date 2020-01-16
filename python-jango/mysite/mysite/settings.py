@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    'blog',
+    'account'
 ]
 
 MIDDLEWARE = [
@@ -55,8 +56,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # 定义了模板文件的位置，并且该目录的名称templates也在这里定义了，BASE_DIR表示本项目的根目录，用os.path.join()函数将两者连接起来，即模板目录的位置是相对项目根目录的templates目录——./templates
+        'APP_DIRS': True, # 将APP_DIRS设置为False，即不再允许Django按照默认方式寻找模板文件
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -119,3 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# 指定了静态文件存放目录的位置，即在本项目根目录中创建．/static子目录
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
