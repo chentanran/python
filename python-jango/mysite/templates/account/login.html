@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="row text-center vertical-middle-sm">
+        <h1>Login</h1>
+        <p>输入账号和密码</p>
+        <form class="form-horizontal" action="." method="post">
+<!--            跨域请求 必须得写-->
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Login">
+        </form>
+    </div>
+{% endblock %}
