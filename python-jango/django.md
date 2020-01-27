@@ -75,7 +75,7 @@ blog
     LANGUAGE_CODE：设置项目的语言，在一般情况下可以不用修改，如果非用汉语，则设置为LANGUAGE_CODE = 'zh-hans'（注意不是’zh-cn'）
     TIME_ZONE：设置时区，通常使用东八区，设置为“Asia/Shanghai”
 ```          
-python manage.py makemigrations
+python manage.py makemigrations xxx
 ```         
    创建了一个能够建立数据库表的文件
 ```                 
@@ -91,4 +91,10 @@ sqlite3 db.sqlite3文件绝对目录
         .header on
         .mode column
         select * from 表名;
+
+        CharField：用于保存字符串，在使用时一定要声明字符串的长度
+        TextField：与CharField一样，区别在于保存的字符串长度是无限的（严格说应该受制于数据库程序和硬件系统），通常用于保存较大文本
+        EmailField、URLField：都继承了CharField，只不过其中包含了验证它们的值是否是E-mail和URL的方法。将某个字段设置为该类型，不需要再编写对写入数据的验证方法
+        FileField：表示该字段接收上传文件，同时将上传的文件保存到服务器中
+        DateField、DateTimeField：用于保存时间，有一个常用参数auto_now_add，如果auto_now_add=True，那么当数据模型实例被保存时，当前时间将自动被存储，而不需要为该字段进行赋值。
 ```

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
-from .forms import LoginForm
+from .forms import LoginForm, RegistrationForm, UserProfileForm
 
 
 # Create your views here.
@@ -25,3 +25,23 @@ def user_login(request):
     if request.method == 'GET':
         login_form = LoginForm()
         return render(request, 'account/login.html', {'form': login_form})
+
+
+def register(request):
+    if request.method == 'POST':
+        user_form = RegistrationForm(request.POST)
+        userprofile_form = UserProfileForm(request.POST)
+        if user_form.is_valid()*userprofile_form.is_valid():
+            new_user = user_form.save(commit=False) # 结果是数据并没有被保存到数据库，而仅生成了一个数据对象
+            new_user.set_password(user_form.cleaned_data['password']) # 设置了该数据对象的密码
+            new_user.save() # 数据保存到数据库中
+            new_profile = userprofile_form.save(commit=False)
+            new_profile.user = new_user
+            new_profile.save()
+            return HttpResponse('success')
+        else:
+            return HttpResponse('not register')
+    else:
+        user_form = RegistrationForm()
+        userprofile_form = UserProfileForm()
+        return render(request, 'account/register.html', {'form': user_form, 'profile': userprofile_form})

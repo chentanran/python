@@ -124,3 +124,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+# LOGIN_REDIRECT_URL的默认值是’/accounts/profile/'。为了设置项目所需要的转向目标
+LOGIN_REDIRECT_URL = '/blog/'
+LOGIN_URL = '/account/login/'
