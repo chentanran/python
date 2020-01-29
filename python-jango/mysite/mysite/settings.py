@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'account'
+    'account',
+    'article'
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,10 @@ STATICFILES_DIRS = [
 # LOGIN_REDIRECT_URL的默认值是’/accounts/profile/'。为了设置项目所需要的转向目标
 LOGIN_REDIRECT_URL = '/blog/'
 LOGIN_URL = '/account/login/'
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_HOST_USER = 'your_account@163.com'
+EMAIL_HOST_PASSWORD = 'your_password_email'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'your_account@163.com'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
